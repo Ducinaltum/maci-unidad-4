@@ -147,12 +147,14 @@
   <ItemGroup>
     <ClCompile Include="Crosshair.cpp" />
     <ClCompile Include="Drag.cpp" />
+    <ClCompile Include="Splats.cpp" />
     <ClCompile Include="TrabajoPractico.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Crosshair.h" />
     <ClInclude Include="Drag.h" />
     <ClInclude Include="Minigame.h" />
+    <ClInclude Include="Splats.h" />
     <ClInclude Include="TrabajoPractico.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

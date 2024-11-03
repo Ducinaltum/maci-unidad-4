@@ -4,6 +4,7 @@
 #include "Crosshair.h"
 #include "Minigame.h"
 #include "Drag.h"
+#include "Splats.h"
 
 using namespace sf;
 
@@ -11,8 +12,9 @@ int main()
 {
 	sf:RenderWindow App(sf::VideoMode(800, 600, 32), "TP Número 4");
 	Minigame * activeGame;
-	activeGame = new Drag(&App);
 	//activeGame = new Crosshair(App.getSize());
+	//activeGame = new Drag(&App);
+	activeGame = new Splats();
 
 	while (App.isOpen())
 	{
@@ -28,9 +30,7 @@ int main()
 			}
 		}
 
-		App.clear();
 		activeGame->Update(&App);
-		App.display();
 	}
 	return 0;
 }
