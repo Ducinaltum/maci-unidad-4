@@ -16,5 +16,7 @@ Crosshair::Crosshair(Vector2u screenSize)
 
 void Crosshair::Update(RenderWindow* app)
 {
+	app->clear();
 	app->draw(*sCrosshair);
+	app->display();
 }
