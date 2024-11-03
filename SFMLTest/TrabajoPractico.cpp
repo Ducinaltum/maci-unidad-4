@@ -15,7 +15,8 @@ int main()
 	//activeGame = new Crosshair(App.getSize());
 	//activeGame = new Drag(&App);
 	activeGame = new Splats();
-
+	App.clear();
+	App.display();
 	while (App.isOpen())
 	{
 		Event evt;

@@ -7,7 +7,6 @@ using namespace sf;
 
 Splats::Splats()
 {
-	hasClicked = false;
 	sprite = new Sprite();
 	redCircle = new Texture();
 	blueCircle = new Texture();
@@ -15,31 +14,24 @@ Splats::Splats()
 	blueCircle->loadFromFile("rcircleb.png");
 }
 
+
+//Por favor, revisar el commit "Splat odd behaviour" - 86d72798729553f99d0fe466349692cd9d64cc71 
+//No entiendo por que tiene ese comportamiento tan extraño, parece como si guardara dos buffer independientes,
+//Me pareció bastante curioso y me gustaría saber el porqué
 void Splats::Update(RenderWindow* app)
 {
 	if (Mouse::isButtonPressed(Mouse::Button::Left))
 	{
-		if (!hasClicked)
-		{
-			DrawSprite(app, redCircle);
-		}
+		DrawSprite(app, redCircle);
 	}
 	else if (Mouse::isButtonPressed(Mouse::Button::Right))
 	{
-		if (!hasClicked)
-		{
-			DrawSprite(app, blueCircle);
-		}
-	}
-	else
-	{
-		hasClicked = false;
+		DrawSprite(app, blueCircle);
 	}
 }
 
 void Splats::DrawSprite(RenderWindow* app, Texture* tex)
 {
-	hasClicked = true;
 	sf::Vector2i localPosition = sf::Mouse::getPosition(*app);
 	sprite->setTexture(*tex);
 	sprite->setOrigin(tex->getSize().x / 2, tex->getSize().y / 2);

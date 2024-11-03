@@ -6,7 +6,6 @@ private:
 	Sprite* sprite;
 	Texture* redCircle;
 	Texture* blueCircle;
-	bool hasClicked;
 public:
 	Splats();
 	void Update(RenderWindow* app) override;
