@@ -6,6 +6,12 @@ Adaptacion::Adaptacion()
 	maxScreenSize = new Vector2i(1000, 1000);
 }
 
+Adaptacion::~Adaptacion()
+{
+	delete minScreenSize;
+	delete maxScreenSize;
+}
+
 void Adaptacion::Update(RenderWindow* app)
 {
 	if (sf::Event::Resized)
@@ -27,8 +33,6 @@ void Adaptacion::Update(RenderWindow* app)
 		{
 			newSize.y = maxScreenSize->y;
 		}
-
-		app->setSize(newSize);
+		app->setView(sf::View(sf::FloatRect(0, 0, newSize.x, newSize.y)));
 	}
-	app->clear();
 }

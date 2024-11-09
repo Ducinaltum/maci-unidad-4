@@ -5,13 +5,23 @@
 using namespace sf;
 
 
-Splats::Splats()
+Splats::Splats(RenderWindow* app)
 {
 	sprite = new Sprite();
 	redCircle = new Texture();
 	blueCircle = new Texture();
 	redCircle->loadFromFile("rcircle.png");
 	blueCircle->loadFromFile("rcircleb.png");
+	texture = new RenderTexture();
+	texture->create(app->getSize().x, app->getSize().y);
+}
+
+Splats::~Splats()
+{
+	delete sprite;
+	delete redCircle;
+	delete blueCircle;
+	delete texture;
 }
 
 
@@ -20,6 +30,12 @@ Splats::Splats()
 //Me pareció bastante curioso y me gustaría saber el porqué
 void Splats::Update(RenderWindow* app)
 {
+	// Clear the whole texture with red color
+	// Draw stuff to the texture
+
+	// We're done drawing to the texture
+	//texture.display();
+
 	if (Mouse::isButtonPressed(Mouse::Button::Left))
 	{
 		DrawSprite(app, redCircle);
@@ -28,7 +44,7 @@ void Splats::Update(RenderWindow* app)
 	{
 		DrawSprite(app, blueCircle);
 	}
-	app->display();
+	app->draw(*new Sprite(texture->getTexture()));
 }
 
 void Splats::DrawSprite(RenderWindow* app, Texture* tex)
@@ -37,5 +53,7 @@ void Splats::DrawSprite(RenderWindow* app, Texture* tex)
 	sprite->setTexture(*tex);
 	sprite->setOrigin(tex->getSize().x / 2, tex->getSize().y / 2);
 	sprite->setPosition(localPosition.x, localPosition.y);
-	app->draw(*sprite);
+	//app->draw(*sprite);
+	texture->draw(*sprite);
+	texture->display();
 }

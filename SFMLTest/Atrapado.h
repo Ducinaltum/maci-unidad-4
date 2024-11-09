@@ -15,6 +15,7 @@ private:
 	float Clamp(float current, float min, float max);
 public:
 	Atrapado();
+	~Atrapado();
 	void Update(RenderWindow* app) override;
 };
 

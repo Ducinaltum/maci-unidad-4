@@ -19,6 +19,18 @@ Drag::Drag(RenderWindow* app)
 	snipers[3]->setPosition(rw->getSize().x - sniper->getSize().x, rw->getSize().y - sniper->getSize().y);
 }
 
+Drag::~Drag()
+{
+	delete rw;
+	for (int i = 0; i < NUMBER_OF_SNIPERS; i++)
+	{
+		delete snipers[i];
+	}
+	delete snipers;
+	delete sniper;
+	delete &offset;
+}
+
 void Drag::Update(RenderWindow* app)
 {
 	if (Mouse::isButtonPressed(Mouse::Left))
@@ -46,10 +58,8 @@ void Drag::Update(RenderWindow* app)
 	{
 		grabbedPoint = -1;
 	}
-	app->clear();
 	for (int i = 0; i < NUMBER_OF_SNIPERS; i++)
 	{
 		app->draw(*snipers[i]);
 	}
-	app->display();
 }

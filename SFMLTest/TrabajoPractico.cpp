@@ -13,7 +13,7 @@ using namespace sf;
 
 int main()
 {
-sf:RenderWindow App(sf::VideoMode(800, 600, 32), "TP Número 4");
+	RenderWindow App(sf::VideoMode(800, 600, 32), "TP Número 4");
 	Minigame* activeGame;
 	activeGame = new Crosshair(App.getSize());
 	App.clear();
@@ -46,7 +46,7 @@ sf:RenderWindow App(sf::VideoMode(800, 600, 32), "TP Número 4");
 				else if (evt.key.code == sf::Keyboard::Num3)
 				{
 					delete activeGame;
-					activeGame = new Splats();
+					activeGame = new Splats(&App);
 					App.clear();
 					App.display();
 				}
@@ -74,8 +74,9 @@ sf:RenderWindow App(sf::VideoMode(800, 600, 32), "TP Número 4");
 				break;
 			}
 		}
-
+		App.clear();
 		activeGame->Update(&App);
+		App.display();
 	}
 	return 0;
 }

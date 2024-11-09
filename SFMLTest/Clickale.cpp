@@ -25,9 +25,19 @@ Clickale::Clickale(RenderWindow* app, int enemiesToKill)
 	SetEnemyPosition(app->getSize());
 }
 
+Clickale::~Clickale()
+{
+	delete crosshair;
+	delete enemy;
+	delete crosshairTex;
+	delete enemyTex;
+	delete crosshairOffset;
+	delete crosshairTargetSize;
+	delete enemyTargetSize;
+}
+
 void Clickale::Update(RenderWindow* app)
 {
-	app->clear();
 	sf::Vector2i localPosition = sf::Mouse::getPosition(*app);
 	if (enemiesRemaining > 0)
 	{
@@ -46,7 +56,6 @@ void Clickale::Update(RenderWindow* app)
 	if (enemiesRemaining > 0)
 		app->draw(*enemy);
 	app->draw(*crosshair);
-	app->display();
 }
 
 void Clickale::SetEnemyPosition(Vector2u screenSize)

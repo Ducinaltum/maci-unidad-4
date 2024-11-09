@@ -13,6 +13,7 @@ private:
 	int enemiesRemaining;
 public:
 	Clickale(RenderWindow* app, int enemiesToKill);
+	~Clickale();
 	void Update(RenderWindow* app) override;
 	void SetEnemyPosition(Vector2u screenSize);
 };

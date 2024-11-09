@@ -12,6 +12,7 @@ private:
 
 public:
 	Drag(RenderWindow* app);
+	~Drag();
 	void Update(RenderWindow* app) override;
 };
 

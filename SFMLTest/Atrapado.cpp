@@ -20,6 +20,15 @@ Atrapado::Atrapado()
 	SwapTexture();
 }
 
+Atrapado::~Atrapado()
+{
+	delete sprite;
+	delete squareTex;
+	delete circleTex;
+	delete spriteSize;
+	delete spritePos;
+}
+
 void Atrapado::SwapTexture()
 {
 	isSquare = !isSquare;
@@ -48,7 +57,6 @@ float Atrapado::Clamp(float current, float min, float max)
 
 void Atrapado::Update(RenderWindow* app)
 {
-	app->clear();
 	Vector2f input(0,0);
 	if (Keyboard::isKeyPressed(Keyboard::Key::Left))
 		input.x -= 1;
@@ -80,5 +88,4 @@ void Atrapado::Update(RenderWindow* app)
 	sprite->setPosition(spritePos->x, spritePos->y);
 
 	app->draw(*sprite);
-	app->display();
 }
