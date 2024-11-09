@@ -1,1 +1,6 @@
 Archivo TrabajoPractico es el que tiene el main
+
+Presionando los números 1,2,3,4,5,6 del teclado (no del numpad) se ajecutará el ejercicio correspondiente
+
+Repositorio:
+https://github.com/Ducinaltum/maci-unidad-4.git
