@@ -21,7 +21,6 @@ Drag::Drag(RenderWindow* app)
 
 void Drag::Update(RenderWindow* app)
 {
-	app->clear();
 	if (Mouse::isButtonPressed(Mouse::Left))
 	{
 		sf::Vector2i localPosition = sf::Mouse::getPosition(*rw);
@@ -47,6 +46,7 @@ void Drag::Update(RenderWindow* app)
 	{
 		grabbedPoint = -1;
 	}
+	app->clear();
 	for (int i = 0; i < NUMBER_OF_SNIPERS; i++)
 	{
 		app->draw(*snipers[i]);

@@ -28,6 +28,7 @@ void Splats::Update(RenderWindow* app)
 	{
 		DrawSprite(app, blueCircle);
 	}
+	app->display();
 }
 
 void Splats::DrawSprite(RenderWindow* app, Texture* tex)
@@ -37,5 +38,4 @@ void Splats::DrawSprite(RenderWindow* app, Texture* tex)
 	sprite->setOrigin(tex->getSize().x / 2, tex->getSize().y / 2);
 	sprite->setPosition(localPosition.x, localPosition.y);
 	app->draw(*sprite);
-	app->display();
 }

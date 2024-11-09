@@ -145,12 +145,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Adaptacion.cpp" />
+    <ClCompile Include="Atrapado.cpp" />
+    <ClCompile Include="Clickale.cpp" />
     <ClCompile Include="Crosshair.cpp" />
     <ClCompile Include="Drag.cpp" />
     <ClCompile Include="Splats.cpp" />
     <ClCompile Include="TrabajoPractico.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Adaptacion.h" />
+    <ClInclude Include="Atrapado.h" />
+    <ClInclude Include="Clickale.h" />
     <ClInclude Include="Crosshair.h" />
     <ClInclude Include="Drag.h" />
     <ClInclude Include="Minigame.h" />
