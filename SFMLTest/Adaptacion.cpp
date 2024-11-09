@@ -34,5 +34,6 @@ void Adaptacion::Update(RenderWindow* app)
 			newSize.y = maxScreenSize->y;
 		}
 		app->setView(sf::View(sf::FloatRect(0, 0, newSize.x, newSize.y)));
+		app->setSize(newSize);
 	}
 }
